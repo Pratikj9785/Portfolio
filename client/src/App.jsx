@@ -18,8 +18,12 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/portfolio');
+        // Use relative URL for Vercel deployment (handled by rewrites)
+        // Or fallback to localhost for local dev if not proxied
+        const apiUrl = import.meta.env.PROD ? '/api/portfolio' : 'http://localhost:5000/api/portfolio';
+        const response = await axios.get(apiUrl);
         setData(response.data);
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
         // Fallback data could be added here if needed

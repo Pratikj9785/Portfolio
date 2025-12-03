@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const Navbar = () => {
+const Navbar = ({ data }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const links = [
@@ -17,7 +17,7 @@ const Navbar = () => {
             <div className="w-full h-16 flex flex-row items-center justify-between m-auto">
                 <a href="#" className="h-auto w-auto flex flex-row items-center">
                     <span className="font-bold ml-[10px] text-gray-300 text-xl">
-                        Pratik Jain
+                        {data?.name || "Pratik Jain"}
                     </span>
                 </a>
 

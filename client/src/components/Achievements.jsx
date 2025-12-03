@@ -26,7 +26,7 @@ const Achievements = ({ data }) => {
                             {item.image && (
                                 <div className="w-full md:w-1/3 shrink-0 overflow-hidden rounded-lg border border-slate-700">
                                     <img
-                                        src={`http://localhost:5173${item.image}`} // Assuming dev server port, in prod this should be relative
+                                        src={item.image}
                                         alt={item.title}
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                                         onError={(e) => { e.target.style.display = 'none'; }} // Fallback if image fails

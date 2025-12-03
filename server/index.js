@@ -25,6 +25,11 @@ app.get('/', (req, res) => {
 //   .then(() => console.log('MongoDB connected'))
 //   .catch(err => console.log(err));
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+// Only listen if not running on Vercel (Vercel handles the server)
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+}
+
+module.exports = app;
