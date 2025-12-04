@@ -7,7 +7,7 @@ const Hero = ({ data }) => {
     const [loopNum, setLoopNum] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(10);
 
-    const toRotate = ["Pratik Jain", "a Full Stack Developer", "a Problem Solver", "Competitive Programmer"];
+    const toRotate = ["Pratik Jain", "a Full Stack Developer", "a Problem Solver", "a Competitive Programmer"];
     const period = 1000; // Reduced pause period
 
     useEffect(() => {
