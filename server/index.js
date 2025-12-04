@@ -20,10 +20,10 @@ app.get('/', (req, res) => {
     res.send('Portfolio API is running');
 });
 
-// Connect to MongoDB (Placeholder for now)
-// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-//   .then(() => console.log('MongoDB connected'))
-//   .catch(err => console.log(err));
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.log(err));
 
 // Only listen if not running on Vercel (Vercel handles the server)
 if (process.env.NODE_ENV !== 'production') {
