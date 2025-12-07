@@ -66,12 +66,14 @@ main hr {
   animation: text-appear linear both;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
+  will-change: opacity, transform;
 }
 
 main img {
   animation: image-appear linear both;
   animation-timeline: view();
   animation-range: entry 0% cover 50%;
+  will-change: opacity, transform, filter, scale;
 }
 
 @prefers-reduced-motion {
