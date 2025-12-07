@@ -5,7 +5,7 @@ const Achievements = ({ data }) => {
     if (!data) return null;
 
     return (
-        <SectionWrapper id="achievements" className="bg-slate-900">
+        <SectionWrapper id="achievements">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                 <span className="text-gradient">Achievements</span>
             </h2>

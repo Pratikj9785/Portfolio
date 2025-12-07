@@ -5,7 +5,7 @@ const Experience = ({ data }) => {
     if (!data) return null;
 
     return (
-        <SectionWrapper id="experience" className="bg-slate-900/50">
+        <SectionWrapper id="experience">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                 <span className="text-gradient">Experience</span>
             </h2>

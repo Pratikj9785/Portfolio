@@ -42,7 +42,7 @@ const Hero = ({ data }) => {
     };
 
     return (
-        <div className="relative flex flex-col w-full h-[100vh]" id="about-me">
+        <div className="relative flex flex-col w-full h-[100vh] sticky top-0" id="about-me">
             {/* Background Video */}
             <div className="absolute top-0 left-0 z-[1] w-full h-full">
                 <video
@@ -97,16 +97,6 @@ const Hero = ({ data }) => {
                     >
                         Full Stack Engineer with a passion for Agentic AI and modern web development.
                     </motion.p>
-
-                    <motion.a
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.6 }}
-                        href="#projects"
-                        className="py-2 px-4 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px] bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 border border-purple-500/50"
-                    >
-                        Learn More!
-                    </motion.a>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ const Skills = ({ data }) => {
     ];
 
     return (
-        <SectionWrapper id="skills" className="bg-slate-900/50">
+        <SectionWrapper id="skills">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                 <span className="text-gradient">Skills</span>
             </h2>
