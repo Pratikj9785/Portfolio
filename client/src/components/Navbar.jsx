@@ -1,8 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const Navbar = ({ data }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [showNavbar, setShowNavbar] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    const controlNavbar = () => {
+        if (typeof window !== 'undefined') {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                setShowNavbar(false);
+            } else {
+                setShowNavbar(true);
+            }
+            setLastScrollY(window.scrollY);
+        }
+    };
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.addEventListener('scroll', controlNavbar);
+            return () => {
+                window.removeEventListener('scroll', controlNavbar);
+            };
+        }
+    }, [lastScrollY]);
 
     const links = [
         { name: 'Experience', href: '#experience' },
@@ -13,7 +35,7 @@ const Navbar = ({ data }) => {
     ];
 
     return (
-        <nav className="fixed w-full z-50 bg-[#030014]/50 backdrop-blur-md border-b border-[#7042f861] shadow-lg shadow-[#2a0e61]/50 px-4 md:px-10">
+        <nav className={`fixed w-full z-50 bg-[#030014]/10 backdrop-blur-md border-[#7042f861] shadow-lg shadow-[#2a0e61]/50 px-4 md:px-10 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="w-full h-16 flex flex-row items-center justify-between m-auto">
                 <a href="#" className="h-auto w-auto flex flex-row items-center">
                     <span className="font-bold ml-[10px] text-gray-300 text-xl">

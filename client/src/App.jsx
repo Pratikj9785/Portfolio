@@ -8,6 +8,8 @@ import Skills from './components/Skills';
 import Achievements from './components/Achievements';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import ScrollParticles from './components/ScrollParticles';
 
 import StarBackground from './components/StarBackground';
 
@@ -56,6 +58,8 @@ function App() {
         <Projects data={data?.projects} />
       </main>
       <Footer />
+      <ScrollToTop />
+      <ScrollParticles />
     </div>
   );
 }

@@ -42,7 +42,7 @@ const Hero = ({ data }) => {
     };
 
     return (
-        <div className="relative flex flex-col w-full h-[85vh]" id="about-me">
+        <div className="relative flex flex-col w-full h-[100vh]" id="about-me">
             {/* Background Video */}
             <div className="absolute top-0 left-0 z-[1] w-full h-full">
                 <video
