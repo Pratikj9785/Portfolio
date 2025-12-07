@@ -67,14 +67,14 @@ const ScrollParticles = () => {
                     transition={{ duration: 0.2 }}
                     className="fixed inset-0 z-20 pointer-events-none"
                 >
-                    {[...Array(15)].map((_, i) => (
+                    {[...Array(20)].map((_, i) => (
                         <motion.div
                             key={`scroll-particle-${i}`}
                             custom={scrollDir}
                             variants={particleVariants}
                             initial="initial"
                             animate="animate"
-                            className="absolute w-0.5 h-0.5 bg-[#b49bff] rounded-full"
+                            className="absolute w-1 h-1 bg-[#b49bff] rounded-full"
                             style={{
                                 left: `${Math.random() * 100}%`,
                                 top: `${Math.random() * 100}%`,

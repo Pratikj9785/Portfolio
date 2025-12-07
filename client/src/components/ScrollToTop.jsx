@@ -77,18 +77,16 @@ const ScrollToTop = () => {
                         exit={{ opacity: 0 }}
                         className="fixed inset-0 z-[100] pointer-events-none"
                     >
-                        {[...Array(20)].map((_, i) => (
+                        {[...Array(25)].map((_, i) => (
                             <motion.div
-                                key={`fs - particle - ${i} `}
+                                key={`fs-particle-${i}`}
                                 custom={i}
                                 variants={fullScreenParticleVariants}
                                 initial="initial"
                                 animate="animate"
                                 className="absolute w-1 h-1 bg-[#b49bff] rounded-full"
                                 style={{
-                                    left: `${Math.random() * 100}% `,
-                                    width: `${Math.random() * 3 + 1} px`,
-                                    height: `${Math.random() * 3 + 1} px`,
+                                    left: `${Math.random() * 100}%`,
                                 }}
                             />
                         ))}
@@ -116,7 +114,7 @@ const ScrollToTop = () => {
                                     initial="initial"
                                     animate="animate"
                                     className="absolute w-1 h-1 bg-[#b49bff] rounded-full"
-                                    style={{ left: `${50 + (i - 1) * 20}% ` }}
+                                    style={{ left: `${50 + (i - 1) * 20}%` }}
                                 />
                             ))}
                         </div>
