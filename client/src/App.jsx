@@ -12,9 +12,37 @@ import ScrollToTop from './components/ScrollToTop';
 
 import StarBackground from './components/StarBackground';
 
+import Lenis from 'lenis';
+
 function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Initialize Lenis for smooth scrolling
+    const lenis = new Lenis({
+      duration: 0.1, // Reduced from 1.2 for faster scroll
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: true,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Cleanup not strictly necessary for root component but good practice
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {

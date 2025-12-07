@@ -60,7 +60,7 @@ const Hero = ({ data }) => {
                         className="w-full h-full object-cover"
                     />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#030014]/60 to-[#030014]"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#030014]/40 to-[#030014]/80"></div>
             </div>
 
             <div className="flex flex-col items-center justify-center h-full w-full z-[20] px-4">
