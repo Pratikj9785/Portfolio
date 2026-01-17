@@ -50,6 +50,7 @@ const Hero = ({ data }) => {
                     muted
                     loop
                     playsInline
+                    preload="auto"
                     className="w-full h-full object-cover opacity-90 mix-blend-overlay"
                 >
                     <source src="/assets/5453622-uhd_3840_2160_24fps.mp4" type="video/mp4" />
